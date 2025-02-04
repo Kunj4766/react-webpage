@@ -1,0 +1,134 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 51px;
+  color: #887c68;
+  margin-bottom: 48px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 15px 0;
+}
+
+.communities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.community-card {
+  background: white;
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.15) 17px 12px 60px 0px;
+  position: relative;
+}
+
+.community-card:hover {
+  transform: translateY(-4px);
+}
+
+.community-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.community-image-container {
+  position: relative;
+  height: 292px;
+  overflow: hidden;
+}
+
+.community-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    180.16deg,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.6) 99.86%
+  );
+  pointer-events: none;
+}
+
+.community-card:hover .community-image {
+  transform: scale(1.1);
+}
+
+.community-content {
+  flex: 1;
+  padding: 8px 24px;
+  background: white;
+  position: relative;
+}
+
+.title-wrapper {
+  padding: 8px 24px;
+  background-color: #f8f8f8;
+  position: relative;
+}
+
+.community-title {
+  font-size: 22px;
+  font-weight: 400;
+  color: #887c68;
+  text-align: left;
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+  line-height: 30px;
+}
+
+.community-description {
+  font-size: 16px;
+  line-height: 24px;
+  color: #887c68;
+  text-align: left;
+  font-weight: 400;
+}
+
+.community-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+  .communities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .communities-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .container {
+    padding: 64px 32px;
+  }
+}
